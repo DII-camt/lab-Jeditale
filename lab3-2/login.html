@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form-inline {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-gray-200 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <p class="text-lg">Page Header</p>
+            <img src="./img/logo.JPG" alt="headerlogo" class="w-32 h-32">
+        </div>
+        <hr class="my-2">
+    </header>
+    <main class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-4">หน้า Login</h1>
+        <form action="/sendLogin" class="form-inline flex flex-col space-y-4">
+            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                <label for="email" class="sm:w-1/4 text-right">Username</label>
+                <input type="email" id="email" name="email" class="w-full sm:w-3/4 p-2 border border-gray-300 rounded">
+            </div>
+            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                <label for="password" class="sm:w-1/4 text-right">รหัสผ่าน</label>
+                <input type="password" id="password" name="password" class="w-full sm:w-3/4 p-2 border border-gray-300 rounded">
+            </div>
+            <div class="flex justify-center space-x-4">
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+                <button type="reset" class="bg-gray-500 text-white px-4 py-2 rounded">Reset</button>
+                <a href="./signin.html" class="bg-gray-500 text-white px-4 py-2 rounded">SignIn</a>
+            </div>
+        </form>
+    </main>
+    <footer class="bg-gray-200 p-4 mt-4">
+        <div class="container mx-auto">
+            <hr class="my-2">
+            <div class="flex justify-center">
+                <iframe width="100%" height="500" frameborder="0" scrolling="no"
+                    src="https://maps.google.com/maps?width=500&amp;height=500&amp;hl=en&amp;q=camt เชียงใหม่&amp;z=14&amp;output=embed"
+                    marginheight="0" marginwidth="0"></iframe>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
