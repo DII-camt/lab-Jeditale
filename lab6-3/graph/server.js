@@ -1,12 +1,10 @@
- 
-const { GraphQLObjectType, GraphQLSchema, GraphQLString } = 
-require('graphql'); 
-const express = require('express'); 
-const mariadb = require('mariadb'); 
-const schema = require('./schema'); 
-const root = require('./resolvers'); 
-var { createHandler } = require("graphql-http/lib/use/express") 
-var { ruruHTML } = require("ruru/server") 
+const express = require('express');
+const cors = require('cors');
+const mariadb = require('mariadb');
+const schema = require('./schema');
+const root = require('./resolvers');
+var { createHandler } = require("graphql-http/lib/use/express");
+var { ruruHTML } = require("ruru/server");
 
 // Initialize database connection pool
 const pool = mariadb.createPool({
@@ -39,8 +37,9 @@ const initializeDatabase = async () => {
 
 initializeDatabase();
 
-
 const app = express();
+app.use(cors()); // Enable CORS
+
 app.get("/", (_req, res) => {
     res.type("html");
     res.end(ruruHTML({ endpoint: "/graphql" }));
